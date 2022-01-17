@@ -40,6 +40,18 @@ systemctl status joystream-node
 
 # Go to -> https://telemetry.joystream.org/#/Joystream
 
+#Update JoyStream to 5.5.0 version
+
+systemctl stop joystream-node
+
+cd ~/
+wget https://github.com/Joystream/joystream/releases/download/v9.7.0/joystream-node-5.5.0-f09b3f6dd-x86_64-linux-gnu.tar.gz
+tar -vxf joystream-node-5.5.0-f09b3f6dd-x86_64-linux-gnu.tar.gz
+wget https://github.com/Joystream/joystream/releases/download/v9.3.0/joy-testnet-5.json
+./joystream-node --chain joy-testnet-5.json --pruning archive --validator
+
+systemctl start joystream-node
+
 
 
 
